@@ -43,12 +43,25 @@ public class ArrayTest {
 	
 		findMaxMin(nums);
 		
+		
 		          
 		
 		
 		while (true) {
 			break;
 			
+		}
+		
+		float[] salaries = {12.4f, 4455.43f, 2234.32f, 3434.56f };
+		
+		salaries[0] = salaries[0] + 10;
+		salaries[1] = salaries[1] + 10;
+		salaries[2] = salaries[2] + 10;
+		salaries[3] = salaries[3] + 10;
+		
+		for (int i = 0; i < salaries.length; i++) {
+			salaries[i] = salaries[i] +10;
+			System.out.println("los cambios de salario " + salaries[i]);
 		}
 	}
 
