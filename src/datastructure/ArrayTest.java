@@ -1,5 +1,7 @@
 package datastructure;
 
+import java.security.PrivateKey;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Random;
 
@@ -7,8 +9,11 @@ import oopmodeling.Planet;
 
 public class ArrayTest {
 
+	private static int temp;
+
+
 	public static void main(String[] args) {
-		int[] scores = {12,54,67};
+		int[] scores = {12, 54, 67};
 		String[] names = {"Pablo", "Exel"};
 		Planet[] planets = {new Planet(), new Planet()};
 		System.out.println(scores[0]);//access to the first element
@@ -31,19 +36,33 @@ public class ArrayTest {
 			System.out.println("totalScore = " + totalScore);
 		}
 		// create an array with capacity of storing 10000 intergers
+		
+		int[] values = {32,45,67,90};
+		
+		
+		
 		int[] nums = new int[1000];
 		System.out.println("the lenght of the number array is " + nums.length);
 		sumup();
+		
+		reverse(values);
+		
+		
+			
+			
+		}
 		
 
 		
 		
 		
-		initializeArray(nums);
+		void initializeArray(nums);
 	
 		findMaxMin(nums);
+		switchValues(values, 1, 3);
+		System.out.println(Arrays.toString(values));
 		
-		
+		int arr = {1, 20, 15, 45, 80, 90};
 		          
 		
 		
@@ -51,6 +70,33 @@ public class ArrayTest {
 			break;
 			
 		}
+		
+		
+	}
+	
+	private static void reverse(int[] arr) {
+		// TODO Auto-generated method stub
+		
+		int index1 = 0;
+		int index2 = arr.length -1;
+		
+		for (int i = 0; i < arr.length / 2; i++) {
+			int element = arr[index1];
+			arr[index1] = arr[index2];
+			arr[index2] = element;
+			
+			index1++;
+			index2--;
+			
+			
+			
+		}
+		
+		
+	}
+
+	private void incrementSalary() {
+		// TODO Auto-generated method stub
 		
 		float[] salaries = {12.4f, 4455.43f, 2234.32f, 3434.56f };
 		
@@ -63,10 +109,45 @@ public class ArrayTest {
 			salaries[i] = salaries[i] +10;
 			System.out.println("los cambios de salario " + salaries[i]);
 		}
+
+	}
+	
+
+	private static void switchValues(int[] arr, int index1, int index2) {
+		// TODO Auto-generated method stub
+		
+		if (arr == null) {
+			return;
+		}
+		
+		// ""this operator or
+		if(index1 < 0 || index2 <0) {
+			return;
+		}
+		
+		
+		
+		int temp = arr[index1];
+		arr[index1] = arr[index2];
+		arr[index2] = temp;
+		
+		//>= means greater or equal
+	
+		
+		
+		if (index1 >= arr.length || index2 >= arr.length) {
+			return;
+			
+		}
+		
+		
+		
 	}
 
 	private static void sumup() {
 		// TODO Auto-generated method stub
+		int[] scores = {12, 34, 3423};
+		
 		
 	}
 
