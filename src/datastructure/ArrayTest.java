@@ -53,10 +53,12 @@ public class ArrayTest {
 		}
 		
 
+		int[] nums = {23, 45, 55, 32, 78, 90};
 		
 		
+		void initializeArray(values);
 		
-		void initializeArray(nums);
+		int nums;
 	
 		findMaxMin(nums);
 		switchValues(values, 1, 3);
@@ -174,9 +176,48 @@ public class ArrayTest {
 			
 		}
 			
+		int[] scores;
+		int[] sliced = slice(scores, 2, 45);
 		
+		slice(scores, 2, 10);
+		slice(scores, 10, 0);
 		
 		}
+	
+	
+	/**
+	 * 
+	 * @param nums
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	private static int[] slice(int[] nums, int start, int end) {
+		System.out.println(nums);
+		int[] result = new int[end - start + 1];
+		//result[0] = nums[start + 0];
+		//result[1] = nums[start + 1];
+		//result[2] = nums[start + 2]; 
+		
+		if (nums == null) {
+			return null;
+			
+		}
+		if (start < 0 || end < 0 || start >= nums.length || end >= nums.length) {
+		
+			return null;
+		}
+		if (start > end) {
+			
+		}
+		
+		for (int i = 0; i < result.length; i++) {
+			result[i] = nums[start + i];
+			
+		}
+		
+		return result;
+	}
 
 	
 	private static void initializeArray(int[] nums) {
