@@ -1,0 +1,14 @@
+//create a local repository
+git init
+
+//stage or mark all files under the "src" folder that are new ones or are modified
+
+git add src
+
+//update all changes from our project to the local repository
+git commit -m "message"
+
+//associate the local repository
+git remote add origin
+
+git push -u origin master

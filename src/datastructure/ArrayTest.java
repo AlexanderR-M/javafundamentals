@@ -115,7 +115,7 @@ public class ArrayTest {
 	}
 	
 
-	private static void switchValues(int[] arr, int index1, int index2) {
+	public static void switchValues(int[] arr, int index1, int index2) {
 		// TODO Auto-generated method stub
 		
 		if (arr == null) {
@@ -126,7 +126,10 @@ public class ArrayTest {
 		if(index1 < 0 || index2 <0) {
 			return;
 		}
-		
+		if (index1 >= arr.length || index2 >= arr.length) {
+			return;
+			
+		}
 		
 		
 		int temp = arr[index1];
@@ -137,10 +140,7 @@ public class ArrayTest {
 	
 		
 		
-		if (index1 >= arr.length || index2 >= arr.length) {
-			return;
-			
-		}
+		
 		
 		
 		
