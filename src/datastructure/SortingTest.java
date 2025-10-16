@@ -12,6 +12,10 @@ public class SortingTest {
 
 	private static void sort(int[] arr) {
 		// TODO Auto-generated method stub
+        for (int  i = 0; i < arr.length; i++) {
+            int j = arr[i];
+
+        }
 		
 		
 	}
