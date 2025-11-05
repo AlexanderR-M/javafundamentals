@@ -11,4 +11,4 @@ git commit -m "message"
 //associate the local repository
 git remote add origin
 
-git push -u origin master
+git push -u origin main                                                                                                                                                                                                                                                                                                                                                                                                                                                      
