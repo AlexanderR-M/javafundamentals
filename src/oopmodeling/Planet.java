@@ -2,12 +2,30 @@ package oopmodeling;
 
 
 public class Planet extends CelestialBody {
-	public double mass = 26;
+	//constructors used to create concrete objects of the class
+    //empty constructor without doing anything
+    public Planet(){
+        super();
 
-	float size = 33;
+    }
+    //constructor with two parameters
+    public Planet(double mass, String nameOf){
+        super(nameOf);
+        name = nameOf;
+        this.mass = mass;
 
-	String name = "Machupichu";
-	
+
+    }
+    //constructor with three parameters
+    public Planet(double mass, String name, float radius){
+        super(mass, name);
+        this.mass = mass;
+        this.name = name;
+        this.radius = radius;
+
+
+
+    }
 }
 
 

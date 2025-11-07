@@ -50,21 +50,21 @@ public class ArrayTest {
 		
 			
 			
-		}
+
 		
 
-		int[] nums = {23, 45, 55, 32, 78, 90};
+		int[] minmax = {23, 45, 55, 32, 78, 90};
 		
 		
-		void initializeArray(values);
+		 initializeArray(values);
 		
-		int nums;
+
 	
-		findMaxMin(nums);
+		findMaxMin(minmax);
 		switchValues(values, 1, 3);
 		System.out.println(Arrays.toString(values));
 		
-		int arr = {1, 20, 15, 45, 80, 90};
+		int[] arr = {1, 20, 15, 45, 80, 90};
 		          
 		
 		
@@ -176,9 +176,9 @@ public class ArrayTest {
 			
 		}
 			
-		int[] scores;
+		int[] scores = {23, 234,234};
 		int[] sliced = slice(scores, 2, 45);
-		
+
 		slice(scores, 2, 10);
 		slice(scores, 10, 0);
 		

@@ -10,10 +10,14 @@ public class CelestialBody {
 	
 	public float size = 40;
 
+
+
 	//Private: solo para esta clase 
 	
 	
-	private String  name = "floating star";
+	protected String  name = "floating star";
+
+    public float radius = 1234567.3f;
 
 	public double getMass() {
 		return mass;
@@ -37,7 +41,24 @@ public class CelestialBody {
 
 	public void setName(String name) {
 		this.name = name;
-	} 
+	}
+
+    public void setRadius(float radius) {this.radius = radius;}
+
+    //constructor of this class
+
+    public CelestialBody(){
+
+    }
+
+    public CelestialBody(String name){
+        this.name = name;
+    }
+
+    public CelestialBody(double mass, String name){
+        this.name = name;
+        this.mass = mass;
+    }
 
 
 }
