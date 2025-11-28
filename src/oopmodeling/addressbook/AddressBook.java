@@ -14,9 +14,17 @@ import datastructure.FlexibleArray;
 public class AddressBook {
 	
 	//Attributes
-	protected FlexibleArray<Contact> contactsArray;
+	protected FlexibleArray<Contact> contactsArray ;
+	
+	public AddressBook() {
+	
+		contactsArray = new FlexibleArray<Contact>();
+	}
+	
 	
 	protected Scanner scanner;
+	
+	
 	
 	//behaves
 	public void showContacts() {
@@ -24,11 +32,11 @@ public class AddressBook {
 	}
 	
 	public void addContact(Contact contact) {
-		
+		contactsArray.add(contact);
 	}
 	
-	public void removeContact(String name) {
-		
+	public void removeContact(Contact contact) {
+		contactsArray.remove(contact);
 	}
 
 }

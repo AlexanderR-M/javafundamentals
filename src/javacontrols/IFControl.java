@@ -31,6 +31,27 @@ public class IFControl {
 		else {
 			System.out.println("this is imposible");
 		}
+		
+		/**
+		 * the following two code snippet give us the same result,
+		 * but the control flow is different, in the first one,
+		 * only one of the ifs will be executed, but in the second one,
+		 * all ifs will be checked		
+		 */
+		
+		if (result > 0) {
+			System.out.println("number 1 is greater than 2");
+			
+		}
+		if (result == 0) {
+			System.out.println("number 1  is equal to number 2");
+			
+		}
+		if (result < 0) {
+			System.out.println("number 1 is less than number 2");
+			
+		}
+		
 	}
 
 }

@@ -3,15 +3,17 @@ package oopmodeling.addressbook;
 import java.util.Scanner;
 
 /**
- * 
+ * this class is used to interact with the userº
  * @author alex
- * 26 nov 2025
+ * 28 nov 2025
  */
 
 public class ContactApp {
 	
 	final static AddressBook addressBook = new AddressBook();
 	final static Scanner scanner = new Scanner(System.in);
+	
+
 	
 
 	
@@ -35,17 +37,22 @@ public class ContactApp {
 				addContact();
 				
 			}
+			else if (option == 2) {
+				
+				removeContact();
+				
+			}
+			else if (option == 3) {
+				
+				showContact();
+				
+			}
+			
 			
 		}
 		
 		
-		
-		
-		//addressBook.showContacts();
-		//addressBook.addContact(null);
-		
 	}
-
 
 	private static void addContact() {
 		System.out.println("------Add contact to your address book-----");
@@ -62,10 +69,35 @@ public class ContactApp {
 		System.out.println("Please enter the contatcs name");
 		String  location= scanner.nextLine();
 		//2 Create an object of "Contact", encapsulating all the data passed in the first step
+		Contact Contact = new Contact(name, surname, phone, location);
+		//3 Add the new object to the contact array
+		
+		addressBook.addContact(Contact);
+		
+	}
+	
+	private static void removeContact() {
+		System.out.println("------Remove contact of your address book-----");
+		//1 the user introduce the number, name and other information about the contact
+		System.out.println("Please enter the contatcs name");
+		String name = scanner.nextLine();
+		
+		//2 Create an object of "Contact", encapsulating all the data passed in the first step
+		
 		
 		//3 Add the new object to the contact array
 		
 	}
+	
+	private static void showContact() {
+		System.out.println("------Show contact of your address book-----");
+		//1 the user introduce the number, name and other information about the contact
+		System.out.println("Please enter the contatcs name");
+		String name = scanner.nextLine();
+		
+	}
+
+
 
 
 	private static void showMenu() {
