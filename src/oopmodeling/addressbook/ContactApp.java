@@ -57,6 +57,7 @@ public class ContactApp {
 	private static void addContact() {
 		System.out.println("------Add contact to your address book-----");
 		//1 the user introduce the number, name and other information about the contact
+		scanner.nextLine();
 		System.out.println("Please enter the contatcs name");
 		String name = scanner.nextLine();
 		
@@ -81,11 +82,8 @@ public class ContactApp {
 		//1 the user introduce the number, name and other information about the contact
 		System.out.println("Please enter the contatcs name");
 		String name = scanner.nextLine();
+		System.out.println("name");
 		
-		//2 Create an object of "Contact", encapsulating all the data passed in the first step
-		
-		
-		//3 Add the new object to the contact array
 		
 	}
 	

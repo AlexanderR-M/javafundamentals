@@ -20,7 +20,7 @@ public class Contact {
 		this.location =location;
 		this.surname = surname;
 	}
-	
+	//Atributes or fields class
 	private String phone;
 	private String name;
 	private String surname;

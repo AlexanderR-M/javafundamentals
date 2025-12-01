@@ -7,6 +7,7 @@ package oopmodeling.addressbook;
  */
 
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 import datastructure.FlexibleArray;
@@ -35,8 +36,20 @@ public class AddressBook {
 		contactsArray.add(contact);
 	}
 	
-	public void removeContact(Contact contact) {
-		contactsArray.remove(contact);
+	public boolean removeContact(String name) {
+		//1 a loop to find the position of the contact
+		Contact[] eles = contactsArray.getAll();
+		for (int i = 0; i < contactsArray.size(); i++) {
+			
+			
+		}
+		//2 remove the contact by its position in the array
+		
+		
+		contactsArray.remove(0);
+		
+		
+		return false;
 	}
 
 }

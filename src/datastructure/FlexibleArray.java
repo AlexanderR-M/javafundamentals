@@ -2,6 +2,8 @@ package datastructure;
 
 import java.util.Iterator;
 
+import oopmodeling.addressbook.Contact;
+
 /**
  * this is a class that represents an extensible array
  * an array has a fixed capacity, when reaching the end
@@ -68,5 +70,10 @@ public class FlexibleArray <T> {
     public int size() {
     	return size;
     }
+
+	public T[] getAll() {
+		// TODO Auto-generated method stub
+		return elements;
+	}
 }
 
