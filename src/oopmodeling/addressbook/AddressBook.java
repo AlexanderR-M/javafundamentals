@@ -29,7 +29,9 @@ public class AddressBook {
 	
 	//behaves
 	public void showContacts() {
-		
+		for (int i = 0; i < contactsArray.size(); i++) {
+			System.out.println(contactsArray.get(i).toString());
+		}
 	}
 	
 	public void addContact(Contact contact) {

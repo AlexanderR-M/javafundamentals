@@ -89,11 +89,7 @@ public class ContactApp {
 	}
 	
 	private static void showContact() {
-		System.out.println("------Show contact of your address book-----");
-		//1 the user introduce the number, name and other information about the contact
-		System.out.println("Please enter the contatcs name");
-		String name = scanner.nextLine();
-	
+		addressBook.showContacts();
 		
 	}
 

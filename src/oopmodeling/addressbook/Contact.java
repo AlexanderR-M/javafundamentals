@@ -53,5 +53,8 @@ public class Contact {
 		this.location = location;
 	}
 	
+	public String toString() {
+		return "name: " + name + "phone number" + phone;
+	}
 
 }
