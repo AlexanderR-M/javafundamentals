@@ -56,13 +56,16 @@ public class FlexibleArray <T> {
     public void remove(int i) {
     	//step 1: eliminate the element at position by the parameter
     	elements[i] = null;
-    	//elements[i] = elements[i+1];
+    	//step2: move all the elements behind the eliminated element one step to the left 
     	
     	
-    	
-    	for (int j = 0; j < 5; j++) {
+    	//size -1 is the number of elements that we have to move
+    	for (int j = 0; j < size - i - 1; j++) {
+    		elements[i+j] = elements[i+j+1];
 			
 		}
+    	
+    	
     	size--;
     	
     }
@@ -71,9 +74,9 @@ public class FlexibleArray <T> {
     	return size;
     }
 
-	public T[] getAll() {
+	public T get(int index) {
 		// TODO Auto-generated method stub
-		return elements;
+		return elements[index];
 	}
 }
 

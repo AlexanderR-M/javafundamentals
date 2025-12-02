@@ -83,6 +83,7 @@ public class ContactApp {
 		System.out.println("Please enter the contatcs name");
 		String name = scanner.nextLine();
 		System.out.println("name");
+		addressBook.removeContact(name);
 		
 		
 	}
@@ -92,6 +93,7 @@ public class ContactApp {
 		//1 the user introduce the number, name and other information about the contact
 		System.out.println("Please enter the contatcs name");
 		String name = scanner.nextLine();
+	
 		
 	}
 

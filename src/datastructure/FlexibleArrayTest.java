@@ -1,5 +1,7 @@
 package datastructure;
 
+import java.util.Iterator;
+
 public class FlexibleArrayTest {
     static void main(String[] args) {
         FlexibleArray<Integer> flexibleArray =
@@ -7,6 +9,8 @@ public class FlexibleArrayTest {
         System.out.println("the current size = " + flexibleArray.size());
         flexibleArray.add(3);
         flexibleArray.remove(4);
+        
+        
 
     }
 }

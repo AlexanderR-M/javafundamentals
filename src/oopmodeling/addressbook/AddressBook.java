@@ -38,16 +38,15 @@ public class AddressBook {
 	
 	public boolean removeContact(String name) {
 		//1 a loop to find the position of the contact
-		Contact[] eles = contactsArray.getAll();
+		//Contact[] eles = contactsArray.getAll();
 		for (int i = 0; i < contactsArray.size(); i++) {
-			
+			if (contactsArray.get(i).getName().equals(name)) {
+				contactsArray.remove(i);
+				return true;
+			}
 			
 		}
-		//2 remove the contact by its position in the array
-		
-		
-		contactsArray.remove(0);
-		
+		//2 remove the contact by its position in the array		
 		
 		return false;
 	}
