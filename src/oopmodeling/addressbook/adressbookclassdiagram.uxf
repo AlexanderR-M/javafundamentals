@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>140</y>
+      <w>210</w>
+      <h>290</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Contact&gt;&gt;
+Package::
+oopmodeling.addressbook
+
+Here we create the name,
+surname, 
+phone and location
+--
+-name: String
+
+-surname: String
+
+-phone: String
+
+-Location: String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>300</x>
+      <y>500</y>
+      <w>210</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Addressbook&gt;&gt;
+Package::
+oopmodeling.addressbook
+
+Here we do the opertaions
+--
+contacts: FlexibleArray&lt;Contact&gt;
+-
+#Operation(i: int):
+Removecontact(contact)
+addcontact(Contact) 
+showcontact(Contact)
+--
+--
+Responsabilities: 
+Here we save all the contacts 
+It's the administrator
+-
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>630</x>
+      <y>420</y>
+      <w>210</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;contactapp&gt;&gt;
+Package::
+oopmodeling.addressbook
+-
+#Operation(i: int): Interaction 
+with the user
+--
+Responsibilities: 
+Call addressbook
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
