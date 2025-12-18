@@ -1,5 +1,7 @@
 package io;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -26,6 +28,38 @@ public class FileOperations {
 		writeFile();
 
 		readFile();
+		
+		bufferedRead();
+		
+		bufferedWriter();
+	}
+
+	private static void bufferedWriter() {
+		try {
+			BufferedWriter writer = 
+					new BufferedWriter(new FileWriter("log.txt"));
+			writer.write("manolo" + ";" + "alex");
+			writer.newLine();
+			writer.write("Pablo" + ";" + "pablo@");
+			writer.newLine();
+			writer.flush();
+		} catch (IOException e) {
+			
+			e.printStackTrace();
+		}
+		
+	}
+
+	private static void bufferedRead() {
+		try {
+			System.out.println();
+			System.out.println("buffered reader");
+			BufferedReader br = 
+					new BufferedReader(new FileReader("log.txt"));
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
 	}
 
 	private static void readFile() {
@@ -41,8 +75,17 @@ public class FileOperations {
 			//check the condition first before executing the while body
 			int c;
 //			//if we have read '-1' the loop finishes
-			while ((c = (char)reader.read()) != -1) {
+			while ((c = reader.read()) != -1) {
 				System.out.println(c);
+			}
+			
+			
+			
+			c = reader.read();
+			while (c != -1) {//check if we have reached the end of the file
+				System.out.println((char)c);
+				
+				c = reader.read();
 			}
 			
 			reader.close();
@@ -54,9 +97,10 @@ public class FileOperations {
 			c = 0;
 			do {
 				c = reader.read();
-				System.out.println((char)reader.read());
-				} while (c != -1);
+				System.out.println((char)c);
+			} while (c != -1);
 			reader.close();
+		
 			
 			
 			
