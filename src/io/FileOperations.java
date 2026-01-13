@@ -29,9 +29,11 @@ public class FileOperations {
 
 		readFile();
 		
+		bufferedWriter();
+		
 		bufferedRead();
 		
-		bufferedWriter();
+		
 	}
 
 	private static void bufferedWriter() {
@@ -54,9 +56,25 @@ public class FileOperations {
 		try {
 			System.out.println();
 			System.out.println("buffered reader");
+			//wrap a  instance of @link{FileReader} in an instance of @link {BufferedReader}
+			//so we can manipulate the data in another way in our case
+			//reading the data line by line
 			BufferedReader br = 
 					new BufferedReader(new FileReader("log.txt"));
+			//read a line from the file
+			System.out.println(br.readLine());
+			String data;
+			do {
+				 data = br.readLine();
+				System.out.println(data);
+			}
+			while(data != null);
+			
+			
 		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

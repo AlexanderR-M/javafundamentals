@@ -7,10 +7,14 @@ package oopmodeling.addressbook;
  */
 
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Scanner;
 
 import datastructure.FlexibleArray;
+import utils.FileUtil;
 
 public class AddressBook {
 	
@@ -36,8 +40,12 @@ public class AddressBook {
 	
 	public void addContact(Contact contact) {
 		contactsArray.add(contact);
+		
+		FileUtil.writeToFile(contact.getName() + ";" + contact.getLocation(), "contacts.txt");
 	}
 	
+	
+
 	public boolean removeContact(String name) {
 		//1 a loop to find the position of the contact
 		//Contact[] eles = contactsArray.getAll();
