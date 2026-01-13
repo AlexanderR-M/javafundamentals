@@ -2,67 +2,85 @@ package oopmodeling.gradingsystem;
 
 import java.util.Scanner;
 
+//Clase principal que contiene el menú de la aplicación
 public class App {
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        GestorAlumnos gestor = new GestorAlumnos();
-        int opcion;
+	public static void main(String[] args) {
 
-        do {
-            System.out.println("\n--- GESTIÓN DE NOTAS ---");
-            System.out.println("1. Agregar alumno");
-            System.out.println("2. Listar alumnos");
-            System.out.println("3. Actualizar nota");
-            System.out.println("4. Eliminar alumno");
-            System.out.println("0. Salir");
-            System.out.print("Opción: ");
+		// Scanner para leer datos del usuario
+		Scanner scanner = new Scanner(System.in);
 
-            opcion = scanner.nextInt();
+		// Objeto gestor que maneja los alumnos
+		GestorAlumnos gestor = new GestorAlumnos();
 
-            switch (opcion) {
-                case 1:
-                    System.out.print("ID: ");
-                    int id = scanner.nextInt();
-                    System.out.print("Nombre: ");
-                    String nombre = scanner.next();
-                    System.out.print("Apellido: ");
-                    String apellido = scanner.next();
-                    System.out.print("Nota: ");
-                    double nota = scanner.nextDouble();
+		int opcion;
 
-                    gestor.agregarAlumno(new Alumno(id, nombre, apellido, nota));
-                    break;
+		// Menú principal
+		do {
+			System.out.println("\n--- GESTIÓN DE NOTAS DE ALUMNOS ---");
+			System.out.println("1. Agregar alumno");
+			System.out.println("2. Listar alumnos");
+			System.out.println("3. Actualizar nota");
+			System.out.println("4. Eliminar alumno");
+			System.out.println("0. Salir");
+			System.out.print("Seleccione una opción: ");
 
-                case 2:
-                    gestor.listarAlumnos();
-                    break;
+			opcion = scanner.nextInt();
 
-                case 3:
-                    System.out.print("ID del alumno: ");
-                    int idActualizar = scanner.nextInt();
-                    System.out.print("Nueva nota: ");
-                    double nuevaNota = scanner.nextDouble();
-                    gestor.actualizarNota(idActualizar, nuevaNota);
-                    break;
+			switch (opcion) {
+			case 1:
+				// Agregar alumno
+				System.out.print("ID: ");
+				int id = scanner.nextInt();
 
-                case 4:
-                    System.out.print("ID del alumno: ");
-                    int idEliminar = scanner.nextInt();
-                    gestor.eliminarAlumno(idEliminar);
-                    break;
+				System.out.print("Nombre: ");
+				String nombre = scanner.next();
 
-                case 0:
-                    System.out.println("Saliendo...");
-                    break;
+				System.out.print("Apellido: ");
+				String apellido = scanner.next();
 
-                default:
-                    System.out.println("Opción inválida.");
-            }
+				System.out.print("Nota: ");
+				double nota = scanner.nextDouble();
 
-        } while (opcion != 0);
+				gestor.agregarAlumno(new Alumno(id, nombre, apellido, nota));
+				break;
 
-        scanner.close();
-    }
+			case 2:
+				// Listar alumnos
+				gestor.listarAlumnos();
+				break;
+
+			case 3:
+				// Actualizar nota
+				System.out.print("ID del alumno: ");
+				int idActualizar = scanner.nextInt();
+
+				System.out.print("Nueva nota: ");
+				double nuevaNota = scanner.nextDouble();
+
+				gestor.actualizarNota(idActualizar, nuevaNota);
+				break;
+
+			case 4:
+				// Eliminar alumno
+				System.out.print("ID del alumno: ");
+				int idEliminar = scanner.nextInt();
+
+				gestor.eliminarAlumno(idEliminar);
+				break;
+
+			case 0:
+				// Salir del programa
+				System.out.println("Saliendo del programa...");
+				break;
+
+			default:
+				System.out.println("Opción no válida.");
+			}
+
+		} while (opcion != 0);
+
+		// Cerrar el scanner
+		scanner.close();
+	}
 }
-
