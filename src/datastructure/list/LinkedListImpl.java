@@ -1,6 +1,6 @@
 package datastructure.list;
 
-public class ArrayListImpl<E> implements List<E>{
+public class LinkedListImpl<E> implements List<E> {
 
 	@Override
 	public void add(E e) {
