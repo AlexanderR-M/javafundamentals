@@ -1,5 +1,10 @@
 package datastructure.list;
 
+/**
+/**
+ * the class represents the nodes of a linked list
+ * param <T> 
+ */
 import oopmodeling.Planet;
 
 public class Node <T>{
