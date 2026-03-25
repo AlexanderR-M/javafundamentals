@@ -1,8 +1,13 @@
 package datastructure;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
+import java.util.TreeMap;
+import java.util.concurrent.ConcurrentLinkedDeque;
+import java.util.concurrent.ConcurrentLinkedQueue;
 
 import oopmodeling.Planet;
 
@@ -29,7 +34,7 @@ public class BuiltinDatastructure {
 		//es menos eficiente al acceder a los compnentes que un arraylist porque el array tiene un indice
 		names.get(1);
 
-		
+		//last in first out
 		Stack<Integer> callStack = new Stack<>();
 		//add element on the top of the stack
 		callStack.push(34);
@@ -37,6 +42,31 @@ public class BuiltinDatastructure {
 		callStack.push(8);
 		//peek es para leer el elemento en el top
 		System.out.println(callStack.peek());
+		//remove the element from the top of the stack
+		System.out.println(callStack.pop());
+		
+		Queue<Integer> queue = new ConcurrentLinkedQueue<>();
+		
+		queue.add(1234);
+		
+		Queue<String> printerTasks = new LinkedList<>();
+		printerTasks.add("task 1");
+		printerTasks.add("task 2");
+		printerTasks.add("task 3");
+		//lee elementos sin eliminar
+		System.out.println(printerTasks.peek());
+		//eliminar el primer elemento de la lista
+		System.out.println(printerTasks.poll());
+		
+		
+		TreeMap<String, Planet> tree;
+		
+		HashMap<String, User> users = new HashMap<>(); 
+		users.put("ana", new User());
+		users.put("panblo", new User());
+		
+		
+		
 	}
 
 }
