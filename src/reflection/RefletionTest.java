@@ -16,6 +16,32 @@ public class RefletionTest {
 				Class.forName("oopmodeling.addressbook.AddressBook");
 		inspectClass(cls1);
 		
+		AddressBook addressBook = new AddressBook();
+		
+	}
+	
+	private static void manipulateObject(AddressBook addressBook) throws IllegalArgumentException, IllegalAccessException {
+		Class<?> cls1 = addressBook.getClass();
+		
+		Field[] fields = cls1.getDeclaredFields();
+		try {
+			Field field = cls1.getDeclaredField("phoneNumber");
+			System.out.println(addressBook.getPhoneNumber());
+			field.setAccessible(true);
+			//read the value of a specified field
+			field.get(addressBook);
+			
+			//modify the value of a field of the object
+			field.set(addressBook, "22222");
+		} catch (NoSuchFieldError e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			e.printStackTrace();
+		}
+		
+		cls1.getDeclaredFields();
 	}
 
 	private static void inspectClass(Class<AddressBook> cls1) {

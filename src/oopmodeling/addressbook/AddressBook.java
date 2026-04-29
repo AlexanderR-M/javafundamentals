@@ -61,4 +61,11 @@ public class AddressBook {
 		return false;
 	}
 
+	public char[] getPhoneNumber() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+
 }
