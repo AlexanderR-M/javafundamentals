@@ -8,7 +8,7 @@ import java.util.Iterator;
 import oopmodeling.addressbook.AddressBook;
 
 public class RefletionTest {
-	public static void main(String[] args) throws ClassNotFoundException {
+	public static void main(String[] args) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException {
 		Class<AddressBook> cls1 = AddressBook.class;
 		Class<AddressBook> cls2 = 
 				(Class<AddressBook>) new AddressBook().getClass();
@@ -17,16 +17,32 @@ public class RefletionTest {
 		inspectClass(cls1);
 		
 		AddressBook addressBook = new AddressBook();
+		manipulateObject(addressBook);
 		
+		invokeMethodsOfAnObject(addressBook);
 	}
 	
+	private static void invokeMethodsOfAnObject(Object obj) {
+		Class<?> cls1 = obj.getClass();
+		try {
+			Method method = cls1.getDeclaredMethod("getName");
+			method.invoke(obj, null);
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
 	private static void manipulateObject(AddressBook addressBook) throws IllegalArgumentException, IllegalAccessException {
 		Class<?> cls1 = addressBook.getClass();
 		
 		Field[] fields = cls1.getDeclaredFields();
 		try {
 			Field field = cls1.getDeclaredField("phoneNumber");
-			System.out.println(addressBook.getPhoneNumber());
+			System.out.println(addressBook.getContact());
 			field.setAccessible(true);
 			//read the value of a specified field
 			field.get(addressBook);
@@ -37,7 +53,7 @@ public class RefletionTest {
 			e.printStackTrace();
 		} catch (IllegalArgumentException e) {
 			e.printStackTrace();
-		} catch (IllegalArgumentException e) {
+		} catch (IllegalAccessException e) {
 			e.printStackTrace();
 		}
 		
