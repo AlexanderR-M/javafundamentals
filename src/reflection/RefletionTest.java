@@ -2,13 +2,14 @@ package reflection;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.Iterator;
 
 import oopmodeling.addressbook.AddressBook;
 
 public class RefletionTest {
-	public static void main(String[] args) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException {
+	public static void main(String[] args) throws ClassNotFoundException, IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
 		Class<AddressBook> cls1 = AddressBook.class;
 		Class<AddressBook> cls2 = 
 				(Class<AddressBook>) new AddressBook().getClass();
@@ -20,13 +21,47 @@ public class RefletionTest {
 		manipulateObject(addressBook);
 		
 		invokeMethodsOfAnObject(addressBook);
+		invokeConstructorsOfAnObject(cls1);
 	}
 	
+	private static void invokeConstructorsOfAnObject(Class<?> cls1) {
+		try {
+			cls1.getConstructor().newInstance();
+			Object obj = cls1.getConstructor().newInstance();
+			System.out.println(cls1.getConstructor().newInstance());
+			System.out.println(cls1.getConstructor().newInstance());
+			
+		} catch (InstantiationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoSuchMethodException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SecurityException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+	}
+
 	private static void invokeMethodsOfAnObject(Object obj) {
 		Class<?> cls1 = obj.getClass();
 		try {
 			Method method = cls1.getDeclaredMethod("getName");
-			method.invoke(obj, null);
+			try {
+				method.invoke(obj, null);
+			} catch (IllegalAccessException | InvocationTargetException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		} catch (NoSuchMethodException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -36,7 +71,7 @@ public class RefletionTest {
 		}
 	}
 
-	private static void manipulateObject(AddressBook addressBook) throws IllegalArgumentException, IllegalAccessException {
+	private static void manipulateObject(AddressBook addressBook) throws IllegalArgumentException, IllegalAccessException, NoSuchFieldException, SecurityException {
 		Class<?> cls1 = addressBook.getClass();
 		
 		Field[] fields = cls1.getDeclaredFields();
